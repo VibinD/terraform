@@ -7,9 +7,9 @@ provider "aws" {
 ## Create VPC ##
 resource "aws_vpc" "terraform-vpc" {
   cidr_block       = "172.16.0.0/16"
-
+  enable_dns_hostnames = true
   tags {
-    Name = "tf-example"
+    Name = "terraform-demo-vpc"
   }
 }
 
@@ -73,17 +73,4 @@ resource "aws_subnet" "terraform-subnet_1" {
 
 output "aws_subnet_subnet_1" {
   value = "${aws_subnet.terraform-subnet_1.id}"
-}
-
-resource "aws_network_interface" "terraform_nw_interface" {
-  subnet_id = "${aws_subnet.terraform-subnet_1.id}"
-  private_ips = ["172.16.10.100"]
-  security_groups = ["${aws_security_group.terraform_private_sg.id}"]
-  tags {
-    Name = "terraform_network_interface"
-  }
-}
-
-output "aws_interface_id" {
-  value = "${aws_network_interface.terraform_nw_interface.id}"
 }
