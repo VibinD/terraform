@@ -4,7 +4,7 @@ provider "aws" {
     region = "us-east-1"
 }
 
-resource "aws_appsync_graphql_api" "damodaranv-test-graphql-api" {
+resource "aws_appsync_graphql_api" "tf-test-graphql-api" {
   authentication_type = "API_KEY"
-  name                = "damodaranv-test-api"
+  name                = "terraform-test-api"
 }
