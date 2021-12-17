@@ -1,7 +1,7 @@
 provider "aws" {
-    access_key = ""
-    secret_key = ""
-    region = "us-east-1"
+  access_key = ""
+  secret_key = ""
+  region     = "us-east-1"
 }
 
 resource "aws_appsync_graphql_api" "tf-test-graphql-api" {
