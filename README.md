@@ -38,12 +38,13 @@ terraform destroy // prompt to enter yes or no
 
 
 #### How to format the template ####
-Run the following command in the folder
+Run the following command in the folder to do the formatt the tf files
 
 ```
 terraform fmt
 ```
-Run the following command in the file
+
+Run the following command in the file to do formatting for specific file
 
 ```
 terraform fmt  demo-vpc.tf
